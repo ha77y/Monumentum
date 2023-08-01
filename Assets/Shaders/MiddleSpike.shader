@@ -4,7 +4,7 @@ Shader "Unlit/MiddleSpike"
     {
        // _HeightUpper("UpperHeight",range(0,1)) = 1
         //_HeightLower("LowerHeight",range(0,1)) = 0
-        _Middle("Middle",range(0,1)) =0.5
+        //_Middle("Middle",range(0,1)) =0.5
         _Width("Width",range(0,1)) =0.1
     }
     SubShader
@@ -49,6 +49,7 @@ Shader "Unlit/MiddleSpike"
 
             fixed4 frag (Interpolators i) : SV_Target
             {
+                _Middle = sin(_Time.y)/2 +0.5;
                 float top = _Middle+(_Width/2);
                 float bottom = _Middle-(_Width/2);
                 
