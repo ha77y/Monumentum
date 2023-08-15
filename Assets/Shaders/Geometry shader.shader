@@ -54,12 +54,11 @@ Shader "Unlit/Geometry shader"
                 return o;
             }
 
-            [maxvertexcount(7)]
-            g2f geo (v2g z)
+            [maxvertexcount(9)]
+            g2f geo (triangle v2g Inputs[3])
             {
                 g2f o;
                 
-                o.vertex = z.vertex;
             }
             
             
